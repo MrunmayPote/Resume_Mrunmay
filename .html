@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Mrunmay Pote - Electrical Engineering Candidate specializing in Power Systems, Automation, and Robotics.">
+    <title>Mrunmay Pote | Electrical Engineering Apex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* CORE STYLES - Modern Dark Theme */
+        :root {
+            --primary-color: #00e676; /* Vibrant Green/Aqua */
+            --primary-dark: #00a040;
+            --primary-glow: rgba(0, 230, 118, 0.4);
+            --background-color: #0d0d0d;
+            --card-background: #161616;
+            --text-color: #ffffff;
+            --secondary-text: #cccccc; /* Lightened for better contrast */
+            --border-color: #333333;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* UTILITIES */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            color: var(--text-color);
+            text-align: center;
+            position: relative;
+            letter-spacing: -1px;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            border-radius: 2px;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(13, 13, 13, 0.85); /* Semi-transparent */
+            backdrop-filter: blur(10px); /* Glassmorphism */
+            -webkit-backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--secondary-text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color var(--transition-speed);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* HERO SECTION */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 15% 50%, #1a2e23, var(--background-color) 40%);
+            padding: 80px 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-tag {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-content h1 span {
+            background: linear-gradient(90deg, var(--primary-color), #66ffc2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: var(--secondary-text);
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--primary-color);
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            box-shadow: 0 0 20px var(--primary-glow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px var(--primary-glow);
+            background-color: #00ff80;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 100px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* CARD GRID */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-background);
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-dark);
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            border-bottom: 2px solid var(--primary-dark);
+            padding-bottom: 10px;
+            display: inline-block;
+            min-width: 50px;
+        }
+
+        .card p, .card li {
+            color: var(--secondary-text);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        /* TIMELINE (Experience) */
+        .timeline-item {
+            padding-left: 25px;
+            border-left: 2px solid var(--border-color);
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .sub-title {
+            display: block;
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .date {
+            display: inline-block;
+            font-size: 0.8rem;
+            background: #222;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        /* SKILLS (XP Bars) */
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+
+        .xp-bar-bg {
+            height: 8px;
+            background-color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .xp-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+            width: 0; /* Animated by JS */
+            border-radius: 4px;
+            position: relative;
+            transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* PROJECT LISTS */
+        .project-detail-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-detail-list li {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .project-detail-list li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+        }
+
+        /* ACHIEVEMENTS */
+        .achievement-badge {
+            display: flex;
+            gap: 15px;
+            background: #222;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid #ffc107;
+        }
+
+        .achievement-badge .icon {
+            font-size: 1.5rem;
+        }
+
+        /* CONTACT */
+        .contact-box {
+            background: var(--card-background);
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-details {
+            margin: 30px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .contact-details p {
+            margin-bottom: 10px;
+            color: var(--secondary-text);
+        }
+
+        .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer .socials {
+            margin-top: 15px;
+        }
+
+        footer .socials a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: 0.3s;
+        }
+
+        footer .socials a:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-background);
+                flex-direction: column;
+                padding: 20px;
+                gap: 20px;
+                border-bottom: 1px solid var(--border-color);
+                display: none; /* Hidden by default */
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">M.POTE <span>//</span> Apex EE</div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="nav-links">
+                <a href="#about" onclick="closeMenu()">Profile</a>
+                <a href="#skills" onclick="closeMenu()">XP</a>
+                <a href="#experience" onclick="closeMenu()">Trajectory</a>
+                <a href="#projects" onclick="closeMenu()">Projects</a>
+                <a href="#contact" onclick="closeMenu()">Connect</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-content">
+            <span class="hero-tag">B.Tech. Electrical Engineering Candidate</span>
+            <h1 id="about">Mrunmay Pote.<br>Architecting the Future of <span>Power & Automation.</span></h1>
+            <p>Aspiring Electrical Engineer with a focus on <strong>power systems</strong>, <strong>automation</strong>, and <strong>robotics</strong>. Proven hands-on skills in electrical design, embedded systems, and sensor integration, evidenced by the MAHAGENCO internship and successful projects.</p>
+            <a href="#contact" class="cta-button">Check Availability →</a>
+        </div>
+    </section>
+
+    <section id="skills" class="container">
+        <h2 class="section-heading">01 | Core XP & Toolkit</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3 class="card-title">Software & Simulation</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-name"><span>MATLAB Simulink</span> <span>95%</span></div>
+                    <div class="xp-bar-bg"><div class="xp-fill" data-level="95"></div></div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-name"><span>AutoCAD / Proteus</span> <span>85%</span></div>
+                    <div class="xp-bar-bg"><div class="xp-fill" data-level="85"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name"><span>Keil</span> <span>80%</span></div>
+                    <div class="xp-bar-bg"><div class="xp-fill" data-level="80"></div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Programming & Embedded</h3>
+                
+                <div class="skill-item">
+                    <div class="skill-name"><span>C++ / Python</span> <span>90%</span></div>
+                    <div class="xp-bar-bg"><div class="xp-fill" data-level="90"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name"><span>Embedded Systems</span> <span>95%</span></div>
+                    <div class="xp-bar-bg"><div class="xp-fill" data-level="95"></div></div>
+                </div>
+
+                <div class="skill-item">
+                    <div class="skill-name"><span>Sensor Integration</span> <span>90%</span></div>
+                    <div class="xp-bar-bg"><div class="xp-fill" data-level="90"></div></div>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 25px; color: #666; font-style: italic;">Additional Expertise: Canva, Electrical Design Standards.</p>
+    </section>
+
+    <section id="experience" class="container">
+        <h2 class="section-heading">02 | Trajectory & Education</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3 class="card-title">Experience</h3>
+                <div class="timeline-item" style="border-left-color: #ff4500;">
+                    <style>.timeline-item[style*="ff4500"]::before { background-color: #ff4500; box-shadow: 0 0 10px #ff4500; }</style>
+                    <h3>Technical Engineer Intern</h3>
+                    <span class="sub-title">Maharashtra State Power Generation Company (MAHAGENCO)</span>
+                    <span class="date">16 Jun 2023 - 01 Jul 2023</span>
+                    <p>Gained practical exposure to <strong>hydroelectric power generation</strong>, turbine operations, and distributed line systems.</p>
+                    <p>Actively participated in system monitoring, electrical maintenance, and <strong>fault analysis</strong>.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Education</h3>
+                <div class="timeline-item">
+                    <h3>B.Tech. Electrical Engineering</h3>
+                    <span class="sub-title">Government College of Engineering, Karad</span>
+                    <span class="date">2022 - 2026</span>
+                    <p>Percentage: 64.60%</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>12<sup>th</sup> (HSC) Science</h3>
+                    <span class="sub-title">Balvantrao Zele Highschool and Junior College</span>
+                    <span class="date">2022</span>
+                    <p>Percentage: 69% (MSBSHSE)</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>10<sup>th</sup> (SSC)</h3>
+                    <span class="sub-title">Sou Sundarbai Shankarlal Malu English Medium School</span>
+                    <span class="date">2020</span>
+                    <p>Percentage: 88.60% (MSBSHSE)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-heading">03 | Apex Projects</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3 class="card-title">Autonomous Vehicle</h3>
+                <p>Developed a Self-Driving Car prototype utilizing integrated sensors, embedded systems, and <strong>autonomous navigation algorithms</strong>.</p>
+                <br>
+                <strong>Core Skills:</strong>
+                <ul class="project-detail-list">
+                    <li>Embedded Systems Programming</li>
+                    <li>Computer Vision & Lane Detection</li>
+                    <li>Motor Control Circuit Design</li>
+                    <li>Path Planning</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Robotic Arm</h3>
+                <p><strong>Rank 1 at College Level.</strong> Seamless integration of electrical, electronic, and mechanical systems for precise autonomous operation.</p>
+                <br>
+                <strong>Core Skills:</strong>
+                <ul class="project-detail-list">
+                    <li>Automation Concepts</li>
+                    <li>Mechanical Assembly</li>
+                    <li>Debugging & Troubleshooting</li>
+                    <li>Circuit Simulation</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Technical Training</h3>
+                <div style="margin-bottom: 20px;">
+                    <strong style="color: #ffc107; display: block; margin-bottom: 5px;">3-Phase Transformer Design</strong>
+                    <p>Core/Winding Design, Magnetic Circuit Analysis, and Loss/Efficiency Estimation.</p>
+                </div>
+                <div>
+                    <strong style="color: #ffc107; display: block; margin-bottom: 5px;">Power System Awareness</strong>
+                    <p>Grid Monitoring, Electrical Protection, and Load Management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="container">
+        <h2 class="section-heading">04 | Achievements & Persona</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3 class="card-title">Recognition</h3>
+                <div class="achievement-badge">
+                    <span class="icon">🏆</span>
+                    <div>
+                        <strong>Rank 1: Robotic Arm Project</strong>
+                        <p style="margin: 0;">Awarded first place at college level exhibition.</p>
+                    </div>
+                </div>
+                <div class="achievement-badge">
+                    <span class="icon">⚽</span>
+                    <div>
+                        <strong>College Cricket Team</strong>
+                        <p style="margin: 0;">Representative player demonstrating leadership & teamwork.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3 class="card-title">Persona File</h3>
+                <p><strong>Interests:</strong> Poetry, Writing, Chess, Geopolitics, Trekking, Human Behavior.</p>
+                <p><strong>Languages:</strong> English, Marathi, Hindi.</p>
+                <br>
+                <ul class="project-detail-list">
+                    <li>DOB: 21 Feb, 2004</li>
+                    <li>Status: Single</li>
+                    <li>Gender: Male</li>
+                </ul>
+                <br>
+                <p><strong>Location:</strong> Jaysingpur, Maharashtra.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2 class="section-heading">05 | Connect & Deploy</h2>
+        <div class="contact-box">
+            <p style="font-size: 1.2rem; font-weight: 500;">Ready to deploy electrical and automation expertise into a high-impact role.</p>
+            
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:potemrunmay@hotmail.com">potemrunmay@hotmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+919960345064">+91 99603 45064</a></p>
+                <p><strong>Address:</strong> Jaysingpur, Maharashtra, India - 416101</p>
+            </div>
+            
+            <br>
+            <a href="mailto:potemrunmay@hotmail.com" class="cta-button">Start Conversation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Mrunmay Pote. Engineered by The Apex Coder.</p>
+            <div class="socials">
+                <a href="#" aria-label="LinkedIn">💼</a>
+                <a href="#" aria-label="GitHub">⚙️</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger Menu Logic
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active'); // You can add css to animate hamburger lines here if desired
+        });
+
+        function closeMenu() {
+            navLinks.classList.remove('active');
+        }
+
+        // XP Bar Animation on Scroll
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.xp-fill');
+                    bars.forEach(bar => {
+                        const level = bar.getAttribute('data-level');
+                        bar.style.width = `${level}%`;
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) observer.observe(skillsSection);
+    </script>
+</body>
+</html>
